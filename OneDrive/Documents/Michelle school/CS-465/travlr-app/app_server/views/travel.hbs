@@ -1,0 +1,14 @@
+<h2>Our Featured Trips</h2>
+<div class="trip-list">
+  {{#each trips}}
+    <article class="trip">
+      <img
+        class="trip-image"
+        src="/images/{{this.image}}"
+        alt="{{this.title}}"
+      />
+      <h3>{{this.title}}</h3>
+      <p>{{this.description}}</p>
+    </article>
+  {{/each}}
+</div>
