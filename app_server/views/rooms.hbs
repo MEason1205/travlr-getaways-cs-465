@@ -1,0 +1,11 @@
+<h2>Our Rooms</h2>
+<div class="room-list">
+  {{#each rooms}}
+    <article class="room">
+      <img class="trip-image" src="/images/{{this.image}}" alt="{{this.name}}">
+      <h3>{{this.name}}</h3>
+      <p>{{this.description}}</p>
+      <span class="rate">{{this.rate}}</span>
+    </article>
+  {{/each}}
+</div>

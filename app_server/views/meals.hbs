@@ -1,0 +1,11 @@
+<h2>Our Meals</h2>
+<div class="meal-list">
+  {{#each meals}}
+    <article class="meal">
+      <img src="/images/{{this.image}}" alt="{{this.name}}" />
+      <h3>{{this.name}}</h3>
+      <p>{{this.description}}</p>
+      <span class="price">{{this.price}}</span>
+    </article>
+  {{/each}}
+</div>

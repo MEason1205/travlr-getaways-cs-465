@@ -1,0 +1,10 @@
+<h2>News & Updates</h2>
+<div class="news-list">
+  {{#each news}}
+    <article class="news-item">
+      <h3>{{this.headline}}</h3>
+      <span class="date">{{this.date}} &mdash; {{this.author}}</span>
+      <p>{{this.body}}</p>
+    </article>
+  {{/each}}
+</div>

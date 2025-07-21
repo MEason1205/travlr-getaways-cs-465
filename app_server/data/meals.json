@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Continental Breakfast",
+    "image": "breakfast.jpg",
+    "description": "Fresh pastries, fruits, and juices.",
+    "price": "$15"
+  },
+  {
+    "name": "Seafood Platter",
+    "image": "seafood.jpg",
+    "description": "Catch-of-the-day with local spices.",
+    "price": "$35"
+  }
+]

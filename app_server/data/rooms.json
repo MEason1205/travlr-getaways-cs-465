@@ -1,0 +1,4 @@
+[
+  { "name":"Ocean View Suite",    "image":"suite.jpg",  "description":"Spacious suite with a panoramic sea view.", "rate":"$250/night" },
+  { "name":"Garden Bungalow",     "image":"rooms.png",  "description":"Cozy bungalow nestled in lush gardens.",    "rate":"$180/night" }
+]
