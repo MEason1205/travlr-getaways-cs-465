@@ -1,4 +1,23 @@
 [
-  { "title":"Rome Explorer",    "image":"rome.jpg",    "description":"Experience the heart of the Roman Empire." },
-  { "title":"Safari Adventure", "image":"safari.jpg",  "description":"Get up close with wildlife in Africa." }
+  {
+    "title":       "Rome Explorer",
+    "image":       "rome.jpg",
+    "description": "Experience the heart of the Roman Empire.",
+    "price":       999,
+    "tags":        ["history","architecture"]
+  },
+  {
+    "title":       "Safari Adventure",
+    "image":       "safari.jpg",
+    "description": "Get up close with wildlife in Africa.",
+    "price":       1299,
+    "tags":        ["wildlife","nature"]
+  },
+  {
+    "title":       "Island Getaway",
+    "image":       "island.jpg",
+    "description": "Relax on a private tropical island.",
+    "price":       1599,
+    "tags":        ["beach","luxury"]
+  }
 ]
