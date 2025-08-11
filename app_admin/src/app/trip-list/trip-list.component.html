@@ -1,0 +1,12 @@
+<div *ngIf="loading">Loading…</div>
+<div class="text-danger" *ngIf="error">{{ error }}</div>
+
+<div class="d-flex justify-content-end mb-3">
+  <a class="btn btn-success" [routerLink]="['/trip','new']">Add Trip</a>
+</div>
+
+<div class="row g-3">
+  <div class="col-md-4" *ngFor="let t of trips">
+    <app-trip-card [trip]="t" (deleted)="handleDeleted($event)"></app-trip-card>
+  </div>
+</div>

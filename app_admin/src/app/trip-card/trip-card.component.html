@@ -1,0 +1,21 @@
+<div class="card h-100">
+  <img [src]="trip.image" class="card-img-top" alt="{{ trip.name }}" />
+  <div class="card-body">
+    <h5 class="card-title">{{ trip.name }}</h5>
+    <p class="card-text mb-1"><strong>Resort:</strong> {{ trip.resort }}</p>
+    <p class="card-text mb-1">
+      <strong>Dates:</strong> {{ trip.start | date }} – {{ trip.end | date }}
+    </p>
+    <p class="card-text mb-1">
+      <strong>Length:</strong> {{ trip.length }} day{{ trip.length === 1 ? '' : 's' }}
+    </p>
+    <p class="card-text mb-2">
+      <strong>Price:</strong> {{ trip.perPerson | currency }}
+    </p>
+    <p class="card-text small text-muted">{{ trip.description }}</p>
+  </div>
+  <div class="card-footer d-flex gap-2">
+    <button class="btn btn-sm btn-primary" (click)="edit()">Edit</button>
+    <button class="btn btn-sm btn-outline-danger" (click)="remove()">Delete</button>
+  </div>
+</div>
