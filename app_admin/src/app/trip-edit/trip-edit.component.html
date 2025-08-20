@@ -1,0 +1,53 @@
+<div *ngIf="loading">Loading...</div>
+<div class="text-danger" *ngIf="error">{{ error }}</div>
+
+<form *ngIf="!loading" (ngSubmit)="save()" #f="ngForm" class="vstack gap-3">
+  <div class="row g-3">
+    <div class="col-md-6">
+      <label class="form-label" for="code">Trip Code</label>
+      <input id="code" class="form-control" name="code" [(ngModel)]="trip.code" required />
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label" for="name">Name</label>
+      <input id="name" class="form-control" name="name" [(ngModel)]="trip.name" required />
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label" for="resort">Resort</label>
+      <input id="resort" class="form-control" name="resort" [(ngModel)]="trip.resort" required />
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label" for="length">Length (days)</label>
+      <input id="length" class="form-control" type="number" min="1" name="length" [(ngModel)]="trip.length" required />
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label" for="start">Start Date</label>
+      <input id="start" class="form-control" type="date" name="start" [(ngModel)]="trip.start" required />
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label" for="end">End Date</label>
+      <input id="end" class="form-control" type="date" name="end" [(ngModel)]="trip.end" required />
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label" for="image">Image URL</label>
+      <input id="image" class="form-control" name="image" [(ngModel)]="trip.image" />
+    </div>
+
+    <div class="col-12">
+      <label class="form-label" for="description">Description</label>
+      <textarea id="description" class="form-control" rows="4" name="description" [(ngModel)]="trip.description"></textarea>
+    </div>
+  </div>
+
+  <div class="d-flex gap-2 mt-3">
+    <button class="btn btn-primary" type="submit" [disabled]="f.invalid || saving">
+      {{ isEdit ? 'Update' : 'Add' }} Trip
+    </button>
+    <button class="btn btn-outline-secondary" type="button" (click)="cancel()">Cancel</button>
+  </div>
+</form>

@@ -15,6 +15,7 @@ body {
 img {
 	border: 0;
 }
+<<<<<<< HEAD
 
 /*------------------------------ TRIP THUMBNAILS ------------------------------*/
 .trip-image {
@@ -24,6 +25,8 @@ img {
   margin-bottom: 0.5rem;
 }
 
+=======
+>>>>>>> febd5d1e6ce99ab75017404cd29f34385280cd01
 /*------------------------------ Sprites ------------------------------*/
 #navigation li, #navigation li a:hover, #navigation li.selected a {
 	background-image: url(../images/bg-menu.png);
