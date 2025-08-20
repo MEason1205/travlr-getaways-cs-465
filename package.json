@@ -18,10 +18,14 @@
   },
   "homepage": "https://github.com/MEason1205/travlr-getaways#readme",
   "dependencies": {
+<<<<<<< HEAD
     "bcryptjs": "^3.0.2",
     "express": "^5.1.0",
     "hbs": "^4.2.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.16.5"
+=======
+    "express": "^5.1.0"
+>>>>>>> febd5d1e6ce99ab75017404cd29f34385280cd01
   }
 }
