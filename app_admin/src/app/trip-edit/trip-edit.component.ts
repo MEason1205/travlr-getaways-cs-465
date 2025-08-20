@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Trip, TripDataService } from '../services/trip-data';
 
-
 @Component({
   selector: 'app-trip-edit',
   standalone: true,
@@ -21,44 +20,43 @@ export class TripEditComponent implements OnInit {
   saving = false;
   error: string | null = null;
 
+  // NEW: track whether we’re editing an existing trip
+  isEdit = false;
+
   trip: Trip = {
-    code: '',
-    name: '',
-    resort: '',
-    start: '',
-    end: '',
-    length: 1,
-    perPerson: 0,
-    image: '',
-    description: ''
+    code: '', name: '', resort: '',
+    start: '', end: '', length: 1,
+    perPerson: 0, image: '', description: ''
   };
 
   ngOnInit(): void {
-  const code = this.route.snapshot.paramMap.get('code');
-  if (code) {
-    this.loading = true;
-    this.tripService.getTrip(code).subscribe({
-      next: (t: Trip) => { this.trip = t; this.loading = false; },
-      error: (err: unknown) => { this.error = String(err); this.loading = false; }
-    });
+    const code = this.route.snapshot.paramMap.get('code');
+    if (code) {
+      this.isEdit = true;
+      this.loading = true;
+      this.tripService.getTrip(code).subscribe({
+        next: t => { this.trip = t; this.loading = false; },
+        error: err => { this.error = String(err); this.loading = false; }
+      });
+    }
   }
-}
 
-save(): void {
-  this.saving = true;
-  this.error = null;
+  save(): void {
+    this.saving = true;
+    this.error = null;
 
-  const done = () => (this.saving = false);
-  const onSuccess = () => { this.router.navigate(['/']); done(); };
-  const onError  = (err: unknown) => { this.error = String(err); done(); };
+    const done = () => this.saving = false;
+    const onSuccess = () => { this.router.navigate(['/']); done(); };
+    const onError = (err: unknown) => { this.error = String(err); done(); };
 
-  if (this.trip.code) {
-    this.tripService.updateTrip(this.trip).subscribe({ next: onSuccess, error: onError });
-  } else {
-    this.tripService.addTrip(this.trip).subscribe({ next: onSuccess, error: onError });
+    if (this.isEdit) {
+      this.tripService.updateTrip(this.trip).subscribe({ next: onSuccess, error: onError });
+    } else {
+      this.tripService.addTrip(this.trip).subscribe({ next: onSuccess, error: onError });
+    }
   }
-}
-cancel(): void {
-  this.router.navigate(['/']);
-}
+
+  cancel(): void {
+    this.router.navigate(['/']);
+  }
 }
